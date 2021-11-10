@@ -1,0 +1,191 @@
+* {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.featured {
+  font-size: 10px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 7em;
+}
+.buttons .btn {
+  margin-top: 1em;
+  display: inline-block;
+  padding: 0.8em 1.5em;
+  border-radius: 0.5em;
+  font-size: 1.7em;
+  color: #ff5a3c;
+  background: #f9edeb;
+  cursor: pointer;
+  text-align: center;
+}
+
+.buttons .btn:hover {
+  background: #ff5a3c;
+  color: #fff;
+}
+.heading {
+  text-align: center;
+  color: #333;
+  font-size: 4em;
+  margin: 1em 0;
+}
+
+.heading span {
+  color: #ff5a3c;
+  background: #f9edeb;
+  border-radius: 0.5em;
+  padding: 0.2em 1.5em;
+}
+
+.featured .box-container .box {
+  border: 0.1em solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.1);
+  border-radius: 0.5em;
+  overflow: hidden;
+  background: #fff;
+  flex: 1 1 30em;
+}
+
+.featured .box-container .box .image-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 25em;
+}
+
+.featured .box-container .box .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.2s linear;
+}
+
+.featured .box-container .box:hover .image-container img {
+  transform: scale(1.1);
+}
+
+.featured .box-container .box .image-container .info {
+  position: absolute;
+  top: 1em;
+  left: 0;
+  display: flex;
+}
+
+.featured .box-container .box .image-container .info h3 {
+  font-weight: 500;
+  font-size: 1.4em;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 0.5em;
+  padding: 0.5em 1.5em;
+  margin-left: 1em;
+}
+
+.featured .box-container .box .image-container .icons {
+  position: absolute;
+  bottom: 1em;
+  right: 0;
+  display: flex;
+}
+
+.featured .box-container .box .image-container .icons a {
+  color: #fff;
+  display: flex;
+  border-radius: 0.5em;
+  background: rgba(0, 0, 0, 0.3);
+  margin-right: 1em;
+  padding: 0.7em;
+}
+
+.featured .box-container .box .image-container .icons h3 {
+  font-weight: 500;
+  padding-left: 0.5em;
+}
+
+.featured .box-container .box .image-container .icons a:hover {
+  background: #ff5a3c;
+}
+
+.featured .box-container .box .content {
+  padding: 1.5em;
+}
+
+.featured .box-container .box .content .price {
+  display: flex;
+  align-items: center;
+}
+
+.featured .box-container .box .content .price h3 {
+  color: #ff5a3c;
+  font-size: 2em;
+  margin-right: auto;
+}
+
+.featured .box-container .box .content .price a {
+  color: #666;
+  font-size: 1.5em;
+  margin-right: 0.5em;
+  border-radius: 0.5em;
+  height: 4em;
+  width: 4em;
+  line-height: 4em;
+  text-align: center;
+  background: #f7f7f7;
+}
+
+.featured .box-container .box .content .price a:hover {
+  background: #ff5a3c;
+  color: #fff;
+}
+
+.featured .box-container .box .content .location {
+  padding: 1em 0;
+}
+
+.featured .box-container .box .content .location h3 {
+  font-size: 2.5em;
+  font-weight: 500;
+  color: #333;
+}
+
+.featured .box-container .box .content .location p {
+  font-size: 1.5em;
+  color: #666;
+  line-height: 1.5;
+  padding-top: 0.5em;
+}
+
+.featured .box-container .box .content .details {
+  padding: 0.5em 0;
+  display: flex;
+}
+
+.featured .box-container .box .content .details h3 {
+  flex: 1;
+  padding: 1em;
+  border: 0.1em solid rgba(0, 0, 0, 0.1);
+  color: #999;
+  font-size: 1.3em;
+}
+
+.featured .box-container .box .content .details h3 i {
+  color: #333;
+  padding-left: 0.5em;
+}
+
+.featured .box-container .box .content .buttons {
+  display: flex;
+  gap: 1em;
+}
+
+.featured .box-container .box .content .buttons .btn {
+  flex: 1;
+  font-size: 1.5em;
+}

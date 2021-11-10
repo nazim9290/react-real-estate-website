@@ -1,0 +1,85 @@
+.agents {
+  font-size: 10px;
+  margin: 10px 10px;
+}
+
+.agents .box-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  justify-content: center;
+}
+
+.agents .box-container .box {
+  background: #fff;
+  text-align: center;
+  border: 0.1em solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.1);
+  border-radius: 0.5em;
+  padding: 2em;
+  position: relative;
+  width: 26em;
+}
+
+.agents .box-container .box .fa-envelope {
+  position: absolute;
+  top: 1.8em;
+  left: 2em;
+  color: #333;
+  font-size: 2em;
+}
+
+.agents .box-container .box .fa-envelope:hover {
+  color: #ff5a3c;
+}
+
+.agents .box-container .box .fa-phone {
+  position: absolute;
+  top: 1.8em;
+  right: 2em;
+  color: #333;
+  font-size: 2em;
+}
+
+.agents .box-container .box .fa-phone:hover {
+  color: #ff5a3c;
+}
+
+.agents .box-container .box img {
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.5em rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  height: 10em;
+  width: 10em;
+  margin: 1em 0;
+}
+
+.agents .box-container .box h3 {
+  font-size: 2em;
+  color: #333;
+}
+
+.agents .box-container .box span {
+  font-size: 1.7em;
+  color: #ff5a3c;
+}
+
+.agents .box-container .box .share {
+  padding-top: 2em;
+}
+
+.agents .box-container .box .share i {
+  margin: 0 0.3em;
+  height: 2em;
+  width: 2em;
+  line-height: 2em;
+  background: #f7f7f7;
+  color: #666;
+  border-radius: 0.5em;
+  font-size: 2em;
+}
+
+.agents .box-container .box .share i:hover {
+  background: #ff5a3c;
+  color: #fff;
+}

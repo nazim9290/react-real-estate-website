@@ -1,0 +1,49 @@
+.footer-component {
+  font-size: 10px;
+}
+
+.footer .footer-container {
+  background: #fff;
+  border: 0.1em solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.5em;
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.1);
+  padding: 2em;
+}
+
+.footer .footer-container .box-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+}
+
+.footer .footer-container .box-container .box {
+  flex: 1 1 25em;
+}
+
+.footer .footer-container .box-container .box h3 {
+  font-size: 2.5em;
+  color: #333;
+  padding: 0.5em 0;
+}
+
+.footer .footer-container .box-container .box a {
+  display: block;
+  font-size: 1.5em;
+  color: #666;
+  padding: 0.5em 0;
+}
+
+.footer .footer-container .box-container .box a:hover {
+  color: var(--red);
+  text-decoration: underline;
+}
+
+.footer .footer-container .credit {
+  margin-top: 2em;
+  padding: 0.5em;
+  padding-top: 2.5em;
+  font-size: 2em;
+  text-align: center;
+  color: #333;
+  border-top: 0.1em solid rgba(0, 0, 0, 0.1);
+}

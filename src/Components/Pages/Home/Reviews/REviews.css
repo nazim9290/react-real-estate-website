@@ -1,0 +1,88 @@
+.reviews {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.card {
+  border: none;
+  box-shadow: 0 0 3px #0000001a;
+}
+
+.owl-item {
+  padding: 10px;
+}
+
+.card-yazı p {
+  padding: 30px 40px 50px 40px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+.card-yazı p::after {
+  content: url("https://i.hizliresim.com/ODgyXA.png");
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  margin: 10px 0 0 20px;
+}
+
+.card-yazı p::before {
+  content: url("https://i.hizliresim.com/zMXJz4.png");
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: -10px;
+  left: -18px;
+}
+
+.card-yazı {
+  background-image: linear-gradient(
+    135deg,
+    rgb(108, 196, 247) 10%,
+    rgb(115, 57, 163) 100%
+  );
+  position: relative;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+}
+
+.favicon {
+  width: 100%;
+  height: auto;
+}
+
+.favicon img {
+  height: 90px;
+  width: 90px !important;
+  position: absolute;
+  bottom: -45px;
+  left: 39%;
+  border-radius: 100px;
+  border: 8px solid white;
+}
+
+.puan {
+  margin-top: 20px;
+}
+
+.puan img {
+  height: 20px;
+  width: 20px !important;
+  margin: 30px 5px 0 0;
+}
+
+.isim h1 {
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.isim p {
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-family: sans-serif;
+}
