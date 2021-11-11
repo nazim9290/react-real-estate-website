@@ -42,7 +42,7 @@ const Registration = () => {
             <div className="card-body">
               <form onSubmit={handleLoginSubmit}>
                 <div className="form-group">
-                  <label for="name">User Name</label>
+                  <label htmlFor="name">User Name</label>
                   <input
                     name="name"
                     id="name"
@@ -52,7 +52,7 @@ const Registration = () => {
                   />
                 </div>
                 <div className="form-group">
-                  <label for="email">Email</label>
+                  <label htmlFor="email">Email</label>
                   <input
                     name="email"
                     id="email"
@@ -63,7 +63,7 @@ const Registration = () => {
                 </div>
 
                 <div className="form-group">
-                  <label for="password">Password</label>
+                  <label htmlFor="password">Password</label>
                   <input
                     name="password"
                     id="password"
@@ -73,7 +73,7 @@ const Registration = () => {
                   />
                 </div>
                 <div className="form-group">
-                  <label for="password">Confirm Password</label>
+                  <label htmlFor="password">Confirm Password</label>
                   <input
                     name="password2"
                     id="password"

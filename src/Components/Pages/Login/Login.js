@@ -39,7 +39,7 @@ const Login = () => {
             <div className="card-body">
               <form onSubmit={handleLoginSubmit}>
                 <div className="form-group">
-                  <label for="name">User Name</label>
+                  <label htmlFor="name">User Name</label>
                   <input
                     name="name"
                     id="name"
@@ -49,7 +49,7 @@ const Login = () => {
                   />
                 </div>
                 <div className="form-group">
-                  <label for="email">Email</label>
+                  <label htmlFor="email">Email</label>
                   <input
                     name="email"
                     id="email"
@@ -62,7 +62,7 @@ const Login = () => {
                 <div className="form-group">
                   <div className="row">
                     <div className="col-3">
-                      <label for="password">Password</label>
+                      <label htmlFor="password">Password</label>
                     </div>
 
                     <div className="col-9">

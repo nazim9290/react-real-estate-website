@@ -2,15 +2,21 @@ import React, { useState, useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Properties.css";
+import { useHistory } from "react-router";
 
 const Properties = () => {
   const [properties, setProperties] = useState([]);
+  const history = useHistory();
 
   useEffect(() => {
     fetch("http://localhost:5000/properties")
       .then((res) => res.json())
       .then((data) => setProperties(data));
   }, []);
+
+  const handleViewDetails = (id) => {
+    history.push(`/property/${id}`);
+  };
 
   return (
     <div>
@@ -69,7 +75,11 @@ const Properties = () => {
                         <Link to="#" className="btn">
                           request info
                         </Link>
-                        <Link to="#" className="btn">
+                        <Link
+                          onClick={() => handleViewDetails(pt._id)}
+                          to="#"
+                          className="btn"
+                        >
                           view details
                         </Link>
                       </div>

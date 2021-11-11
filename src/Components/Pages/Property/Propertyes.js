@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import NavBar from "../../Shared/NavBar/NavBar";
@@ -6,12 +7,17 @@ import "../Properties/Properties.css";
 
 const Propertyes = () => {
   const [properties, setProperties] = useState([]);
+  const history = useHistory();
 
   useEffect(() => {
     fetch("http://localhost:5000/properties")
       .then((res) => res.json())
       .then((data) => setProperties(data));
   }, []);
+
+  const handleViewDetails = (id) => {
+    history.push(`/property/${id}`);
+  };
   return (
     <div>
       <div>
@@ -71,7 +77,11 @@ const Propertyes = () => {
                           <Link to="#" className="btn">
                             request info
                           </Link>
-                          <Link to="#" className="btn">
+                          <Link
+                            onClick={() => handleViewDetails(pt._id)}
+                            to="#"
+                            className="btn"
+                          >
                             view details
                           </Link>
                         </div>

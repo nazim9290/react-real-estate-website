@@ -4,7 +4,7 @@
 
 .footer .footer-container {
   background: #fff;
-  border: 0.1em solid rgba(0, 0, 0, 0.2);
+  border-top: 0.1em solid rgba(0, 0, 0, 0.2);
   border-radius: 0.5em;
   box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.1);
   padding: 2em;
@@ -13,7 +13,6 @@
 .footer .footer-container .box-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5em;
 }
 
 .footer .footer-container .box-container .box {
@@ -34,7 +33,7 @@
 }
 
 .footer .footer-container .box-container .box a:hover {
-  color: var(--red);
+  color: #ff5a3c;
   text-decoration: underline;
 }
 

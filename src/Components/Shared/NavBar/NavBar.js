@@ -9,7 +9,7 @@ const NavBar = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand href="#home">NDP HOMES LTD</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
@@ -18,6 +18,9 @@ const NavBar = () => {
             </NavLink>
             <NavLink to="/property">
               <Button>Property</Button>
+            </NavLink>
+            <NavLink to="/dashboard">
+              <Button>Dashboard</Button>
             </NavLink>
           </Nav>
           <Nav>
