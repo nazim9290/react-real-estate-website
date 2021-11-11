@@ -1,8 +1,8 @@
 import React from "react";
 import { Redirect, Route } from "react-router-dom";
-import useAuth from "./../Components/Hooks/useAuth";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
+import useAuth from "./../Hooks/useAuth";
 
 const PrivetRoute = ({ children, ...rest }) => {
   const { user, loading } = useAuth();

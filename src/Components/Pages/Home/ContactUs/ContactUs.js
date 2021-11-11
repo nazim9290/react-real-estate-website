@@ -5,7 +5,7 @@ const ContactUs = () => {
   const [properties, setProperties] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/properties")
+    fetch("https://gentle-hamlet-37789.herokuapp.com/properties")
       .then((res) => res.json())
       .then((data) => setProperties(data));
   }, []);

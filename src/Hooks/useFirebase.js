@@ -11,6 +11,7 @@ import {
   signOut,
 } from "firebase/auth";
 import InitializeFirebase from "../Firebase.Config/FirebaseInitialize";
+import { useHistory } from "react-router-dom";
 
 // initialize firebase app
 InitializeFirebase();
@@ -21,6 +22,7 @@ const useFirebase = () => {
   const [authError, setAuthError] = useState("");
   const [admin, setAdmin] = useState(false);
   const [token, setToken] = useState("");
+  const history = useHistory();
 
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
@@ -96,26 +98,26 @@ const useFirebase = () => {
   }, [auth]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/users/${user.email}`)
+    fetch(`https://gentle-hamlet-37789.herokuapp.com/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin));
-  }, [user.email]);
+  }, [user?.email]);
 
   const logout = () => {
     setIsLoading(true);
     signOut(auth)
       .then(() => {
-        // Sign-out successful.
+        setUser({});
       })
       .catch((error) => {
-        // An error happened.
+        setAuthError(error.massage);
       })
       .finally(() => setIsLoading(false));
   };
 
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
-    fetch("http://localhost:5000/users", {
+    fetch("https://gentle-hamlet-37789.herokuapp.com/users", {
       method: method,
       headers: {
         "content-type": "application/json",

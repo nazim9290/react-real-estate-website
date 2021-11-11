@@ -13,7 +13,7 @@ const PropertyDetails = () => {
   const [properties, setProperties] = useState([]);
   const { id } = useParams();
   useEffect(() => {
-    fetch(`http://localhost:5000/properties/${id}`)
+    fetch(`https://gentle-hamlet-37789.herokuapp.com/properties/${id}`)
       .then((res) => res.json())
       .then((data) => setProperties(data));
   }, []);

@@ -19,16 +19,18 @@ const NavBar = () => {
             <NavLink to="/property">
               <Button>Property</Button>
             </NavLink>
-            <NavLink to="/dashboard">
-              <Button>Dashboard</Button>
-            </NavLink>
+            {user?.email && (
+              <NavLink to="/dashboard">
+                <Button>Dashboard</Button>
+              </NavLink>
+            )}
           </Nav>
           <Nav>
             <Nav.Link href="#deets">More deets</Nav.Link>
             <Nav.Link eventKey={2} href="#memes">
               Dank memes
             </Nav.Link>
-            {user.email ? (
+            {user?.email ? (
               <NavLink to="/login">
                 <Button onClick={logout}>Logout</Button>
               </NavLink>

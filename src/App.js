@@ -8,6 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Propertyes from "./Components/Pages/Property/Propertyes";
 import PropertyDetails from "./Components/Pages/PropertyDetails/PropertyDetails";
 import Dashboard from "./Components/Pages/Dashboard/Dashboard/Dashboard";
+import PrivetRoute from "./PrivetRoute/PrivetRoute";
 
 function App() {
   return (
@@ -27,9 +28,9 @@ function App() {
             <Route exact path="/property">
               <Propertyes />
             </Route>
-            <Route exact path="/dashboard">
+            <PrivetRoute exact path="/dashboard">
               <Dashboard />
-            </Route>
+            </PrivetRoute>
             <Route exact path="/property/:id">
               <PropertyDetails />
             </Route>

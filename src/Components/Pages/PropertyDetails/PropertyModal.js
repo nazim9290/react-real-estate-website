@@ -34,7 +34,7 @@ const PropertyModal = ({
     };
     console.log(booking);
     // send to the server
-    fetch("http://localhost:5000/booking", {
+    fetch("https://gentle-hamlet-37789.herokuapp.com/booking", {
       method: "POST",
       headers: {
         "content-type": "application/json",
