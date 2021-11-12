@@ -11,6 +11,7 @@ const PropertyDetails = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [properties, setProperties] = useState([]);
+
   const { id } = useParams();
   useEffect(() => {
     fetch(`https://gentle-hamlet-37789.herokuapp.com/properties/${id}`)

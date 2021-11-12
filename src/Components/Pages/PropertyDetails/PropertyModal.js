@@ -7,7 +7,6 @@ const PropertyModal = ({
   handleClose,
   show,
   properties,
-  id,
   setBookingSuccess,
 }) => {
   const { user } = useAuth();
@@ -16,6 +15,7 @@ const PropertyModal = ({
     email: user.email,
     phone: "",
     address: "",
+    status: "pending",
   };
   const [bookingData, setBookingData] = useState(initialInfo);
 
@@ -30,7 +30,7 @@ const PropertyModal = ({
     // collect data
     const booking = {
       ...bookingData,
-      serviceId: id,
+      service: properties,
     };
     console.log(booking);
     // send to the server

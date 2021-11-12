@@ -7,7 +7,7 @@ import useAuth from "./../../../Hooks/useAuth";
 const NavBar = () => {
   const { user, logout } = useAuth();
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="white">
       <Container>
         <Navbar.Brand href="#home">NDP HOMES LTD</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -26,10 +26,6 @@ const NavBar = () => {
             )}
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">More deets</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
-              Dank memes
-            </Nav.Link>
             {user?.email ? (
               <NavLink to="/login">
                 <Button onClick={logout}>Logout</Button>

@@ -1,17 +1,11 @@
 import React from "react";
 import { Redirect, Route } from "react-router-dom";
-import CircularProgress from "@mui/material/CircularProgress";
-import Box from "@mui/material/Box";
 import useAuth from "./../Hooks/useAuth";
+import { Spinner } from "react-bootstrap";
 
 const PrivetRoute = ({ children, ...rest }) => {
   const { user, loading } = useAuth();
-  if (loading)
-    return (
-      <Box sx={{ display: "flex" }}>
-        <CircularProgress />
-      </Box>
-    );
+  if (loading) return <Spinner animation="border" variant="primary" />;
   return (
     <Route
       {...rest}

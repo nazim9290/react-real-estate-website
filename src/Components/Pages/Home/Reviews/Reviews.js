@@ -5,12 +5,12 @@ import "react-multi-carousel/lib/styles.css";
 import { Row } from "react-bootstrap";
 
 const Reviews = () => {
-  const [properties, setProperties] = useState([]);
+  const [review, setReview] = useState([]);
 
   useEffect(() => {
-    fetch("https://gentle-hamlet-37789.herokuapp.com/properties")
+    fetch("http://localhost:5000/reviews")
       .then((res) => res.json())
-      .then((data) => setProperties(data));
+      .then((data) => setReview(data));
   }, []);
   const responsive = {
     superLargeDesktop: {
@@ -43,15 +43,13 @@ const Reviews = () => {
               infinite
               autoPlaySpeed={1000}
             >
-              {properties.map((data) => (
+              {review.map((item) => (
                 <div className="col-10">
                   <div className="card">
                     <div className="card-block">
                       <div className="card-yazı">
                         <p className="text-center text-white">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit. Quidem, quae culpa nihil earum quam eos numquam,
-                          quod omnis provident accusamus.
+                          {item.title.slice(0, 200)}
                         </p>
                         <div className="card-sahip">
                           <div className="favicon">
@@ -72,9 +70,9 @@ const Reviews = () => {
                         <img src="https://i.hizliresim.com/GDVyr3.png" alt="" />
                       </div>
                       <div className="isim text-center">
-                        <h1>Lorem Ipsum</h1>
+                        <h1>{item.name}</h1>
                         <p>
-                          <i>Developer</i>
+                          <i>{item.ocupation}</i>
                         </p>
                       </div>
                     </div>

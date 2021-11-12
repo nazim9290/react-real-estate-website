@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Properties.css";
 import { useHistory } from "react-router";
@@ -25,9 +25,14 @@ const Properties = () => {
           <span>featured</span> properties
         </h1>
         <div className="box-container">
+          {properties.length ? (
+            ""
+          ) : (
+            <Spinner animation="border" variant="primary" />
+          )}
           <Container>
             <Row className="g-4">
-              {properties.map((pt) => (
+              {properties.slice(0, 6).map((pt) => (
                 <Col xs={12} md={4} key={pt._id}>
                   <div className="box">
                     <div className="image-container">
