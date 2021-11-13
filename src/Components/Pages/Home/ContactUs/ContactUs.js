@@ -11,25 +11,25 @@ const ContactUs = () => {
   }, []);
   return (
     <div>
-      <section class="agents" id="agents">
-        <h1 class="heading">
+      <section className="agents" id="agents">
+        <h1 className="heading">
           {" "}
           professional <span>agents</span>{" "}
         </h1>
 
-        <div class="box-container">
+        <div className="box-container">
           {agent.map((agent) => (
-            <div class="box" key={agent._id}>
-              <i class="fas fa-envelope"></i>
-              <i class="fas fa-phone"></i>
+            <div className="box" key={agent._id}>
+              <i className="fas fa-envelope"></i>
+              <i className="fas fa-phone"></i>
               <img src={agent.img} alt="" />
               <h3>{agent.name}</h3>
               <span>agent</span>
-              <div class="share">
-                <i class="fab fa-facebook-f"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-linkedin"></i>
+              <div className="share">
+                <i className="fab fa-facebook-f"></i>
+                <i className="fab fa-twitter"></i>
+                <i className="fab fa-instagram"></i>
+                <i className="fab fa-linkedin"></i>
               </div>
             </div>
           ))}

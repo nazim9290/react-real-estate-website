@@ -1,101 +1,86 @@
-import axios from "axios";
-import React from "react";
-import { useForm } from "react-hook-form";
-import "../AddProperty/Addservice.css";
+import React, { useEffect, useState } from "react";
+import { Row, Table, Button } from "react-bootstrap";
 
-const ManageProperty = () => {
-  const { register, handleSubmit, reset } = useForm();
-  const onSubmit = (data) => {
-    axios
-      .put("http://localhost:5000/properties", data)
-      .then((response) => {
-        console.log(response);
-        if (response.data.insertedId) {
-          alert("successfully added");
-        }
-        reset();
+const UpdateProperty = () => {
+  const [properties, setProperties] = useState([]);
+
+  useEffect(() => {
+    const url = "http://localhost:5000/properties";
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setProperties(data));
+  }, []);
+
+  //delet api call
+  const deleteProperty = (id) => {
+    let result = window.confirm("Are you sure you want to delete?");
+    if (result) {
+      fetch(`http://localhost:5000/properties/${id}`, {
+        method: "DELETE",
       })
-      .catch(function (error) {
-        console.log(error);
-      });
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            alert("deleted successfully");
+            const remainingproperties = properties.filter(
+              (property) => property._id !== id
+            );
+            setProperties(remainingproperties);
+          }
+        });
+    }
   };
   return (
     <div>
-      <div className="add-service">
-        <h1>Add a New Property</h1>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="form-container">
-            <div className="form-input">
-              <label>Title:</label>
-              <input
-                type="text"
-                {...register("title", { required: true })}
-                placeholder="Title"
-              />
-            </div>
-            <div className="form-input">
-              <label>location:</label>
-              <input
-                type="text"
-                {...register("location", { required: true })}
-                placeholder=""
-              />
-            </div>
-            <div className="form-input">
-              <label>Rent Or Sell?</label>
-              <textarea
-                type="text"
-                {...register("rentorsell", { required: true })}
-                placeholder="rent"
-              />
-            </div>
-            <div className="form-input">
-              <label>Price:</label>
-              <input
-                type="number"
-                {...register("price", { required: true })}
-                placeholder="2000"
-              />
-            </div>
-            <div className="form-input">
-              <label>Beds:</label>
-              <input
-                type="number"
-                {...register("beds", { required: true })}
-                placeholder="3"
-              />
-            </div>
-            <div className="form-input">
-              <label>SQFT:</label>
-              <input
-                type="number"
-                {...register("sqft", { required: true })}
-                placeholder="2000"
-              />
-            </div>
-            <div className="form-input">
-              <label>Baths:</label>
-              <input
-                type="number"
-                {...register("baths", { required: true })}
-                placeholder="2"
-              />
-            </div>
-            <div className="form-input">
-              <label>Image Url:</label>
-              <input
-                type="text"
-                {...register("img", { required: true })}
-                placeholder="your image url"
-              />
-            </div>
-
-            <input type="submit" />
-          </div>
-        </form>
+      <div>
+        <h6>Manage All Property</h6>
+        <Row>
+          <Table borderless hover responsive>
+            <thead>
+              <tr>
+                <th>No.</th>
+                <th>email</th>
+                <th>image</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {properties.map((item, index) => (
+                <tr key={item._id}>
+                  <td>{index + 1}</td>
+                  <td>{item.title}</td>
+                  <td>
+                    <img src={item.img} width="100" alt="" />
+                  </td>
+                  <td>{item.location}</td>
+                  <td>{item.price}</td>
+                  <td>
+                    <Button
+                      onClick={() => {}}
+                      variant="primary"
+                      className="mx-3"
+                    >
+                      update
+                    </Button>
+                    <Button
+                      onClick={() => {
+                        deleteProperty(item._id);
+                      }}
+                      variant="primary"
+                    >
+                      Delete
+                    </Button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </Row>
       </div>
     </div>
   );
 };
 
-export default ManageProperty;
+export default UpdateProperty;

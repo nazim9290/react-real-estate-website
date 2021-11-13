@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row, Col, Table } from "react-bootstrap";
+import { Container, Row, Col, Table, Button } from "react-bootstrap";
 import useAuth from "./../../../../Hooks/useAuth";
 
 const MyOrder = () => {
   const { user, token } = useAuth();
   const [bookings, setBookings] = useState([]);
+  const [status, setStatus] = useState(false);
 
   useEffect(() => {
-    const url = `http://localhost:5000/bookings?email=${user.email}`;
+    const url = `http://localhost:5000/bookings/user?email=${user.email}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setBookings(data));
@@ -17,7 +18,7 @@ const MyOrder = () => {
     <div>
       <h6>My Order</h6>
       <Row>
-        <Table striped bordered hover responsive>
+        <Table striped bordered hover responsive className="text-center">
           <thead>
             <tr>
               <th>No.</th>
@@ -29,14 +30,20 @@ const MyOrder = () => {
           </thead>
           <tbody>
             {bookings?.map((item, index) => (
-              <tr>
+              <tr key={item._id}>
                 <td>{index + 1}</td>
                 <td>
                   <img src={item.service.img} width="100" alt="" />
                 </td>
                 <td>{item.service.title}</td>
                 <td>{item.service.price}</td>
-                <td>{item?.status}</td>
+                <td>
+                  <Button
+                    variant={item.status === "pending" ? "primary" : "success"}
+                  >
+                    {item.status}
+                  </Button>
+                </td>
               </tr>
             ))}
           </tbody>

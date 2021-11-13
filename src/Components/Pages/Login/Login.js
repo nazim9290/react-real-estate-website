@@ -39,16 +39,6 @@ const Login = () => {
             <div className="card-body">
               <form onSubmit={handleLoginSubmit}>
                 <div className="form-group">
-                  <label htmlFor="name">User Name</label>
-                  <input
-                    name="name"
-                    id="name"
-                    className="form-control"
-                    type="name"
-                    onChange={handleOnChange}
-                  />
-                </div>
-                <div className="form-group">
                   <label htmlFor="email">Email</label>
                   <input
                     name="email"

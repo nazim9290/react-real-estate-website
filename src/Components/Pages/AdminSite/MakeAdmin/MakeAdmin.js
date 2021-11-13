@@ -28,7 +28,7 @@ const MakeAdmin = () => {
     e.preventDefault();
   };
   return (
-    <div>
+    <>
       <h6>Make Admin</h6>
       <form onSubmit={handleMakeAdmin}>
         <div className="form-group">
@@ -38,13 +38,14 @@ const MakeAdmin = () => {
             id="email"
             className="form-control"
             type="email"
+            placeholder="email"
             onBlur={handleOnBlur}
           />
         </div>
         <input type="submit" className="btn btn-primary" />
       </form>
       {success && <Alert variant="success">Admin successfully Added</Alert>}
-    </div>
+    </>
   );
 };
 

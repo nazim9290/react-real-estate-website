@@ -25,10 +25,10 @@ function App() {
             <Route path="/registration">
               <Registration />
             </Route>
-            <Route exact path="/property">
+            <PrivetRoute path="/property">
               <Propertyes />
-            </Route>
-            <PrivetRoute exact path="/dashboard">
+            </PrivetRoute>
+            <PrivetRoute path="/dashboard">
               <Dashboard />
             </PrivetRoute>
             <Route exact path="/property/:id">
@@ -36,6 +36,9 @@ function App() {
             </Route>
             <Route exact path="/">
               <Home />
+            </Route>
+            <Route exact path="*">
+              {<h1>this page is note found </h1>}
             </Route>
           </Switch>
         </Router>

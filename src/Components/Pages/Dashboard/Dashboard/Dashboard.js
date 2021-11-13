@@ -19,18 +19,19 @@ import AdminRoute from "./../../../../AdminRoute/AdminRoute";
 import MakeAdmin from "../../AdminSite/MakeAdmin/MakeAdmin";
 import ManageOrders from "../../AdminSite/ManageOrdes/ManageOrders";
 import AddProperty from "../../AdminSite/AddProperty/AddProperty";
+import ManageProperty from "../../AdminSite/ManageProperty/ManageProperty";
 
 const Dashboard = () => {
   const { user, logout, admin } = useAuth();
   let { path, url } = useRouteMatch();
   return (
-    <div>
+    <>
       <NavBar />
       <Router>
         <Container>
           <h1>dashboard</h1>
           <Row className="my-5">
-            <Col xs={2} md={2} className="dashboard">
+            <Col xs={4} md={2} className="dashboard">
               {user?.email && admin ? (
                 <div className="dashboard-link">
                   <Link to={`${url}/manageOrders`}>Manage All Orders</Link>
@@ -52,10 +53,11 @@ const Dashboard = () => {
                 </div>
               )}
             </Col>
-            <Col xs={10} md={9}>
+            <Col xs={8} md={10} className="">
               <Switch>
                 <Route exact path={path}>
-                  <DashboardHome />
+                  {admin || <DashboardHome />}
+                  {admin && <ManageOrders />}
                 </Route>
                 <Route exact path={`${path}/payment`}>
                   <Payment />
@@ -73,14 +75,14 @@ const Dashboard = () => {
                   <AddProperty />
                 </AdminRoute>
                 <AdminRoute exact path={`${url}/manageProperty`}>
-                  <ReviewPage />
+                  <ManageProperty />
                 </AdminRoute>
               </Switch>
             </Col>
           </Row>
         </Container>
       </Router>
-    </div>
+    </>
   );
 };
 

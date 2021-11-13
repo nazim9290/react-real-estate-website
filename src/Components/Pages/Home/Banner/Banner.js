@@ -15,7 +15,7 @@ const Banner = () => {
     <div>
       <Carousel>
         {properties.slice(0, 3).map((item) => (
-          <Carousel.Item className="item">
+          <Carousel.Item key={item._id} className="item">
             <img className="d-block w-100" src={item.img} alt="First slide" />
             <Carousel.Caption>
               <h3>First slide label</h3>

@@ -1,13 +1,13 @@
 import axios from "axios";
 import React from "react";
 import { useForm } from "react-hook-form";
-import "./Addservice.css";
+import "../AddProperty/Addservice.css";
 
-const AddProperty = () => {
+const ManageProperty = () => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
     axios
-      .post("http://localhost:5000/properties", data)
+      .put("http://localhost:5000/properties", data)
       .then((response) => {
         console.log(response);
         if (response.data.insertedId) {
@@ -43,7 +43,7 @@ const AddProperty = () => {
             </div>
             <div className="form-input">
               <label>Rent Or Sell?</label>
-              <input
+              <textarea
                 type="text"
                 {...register("rentorsell", { required: true })}
                 placeholder="rent"
@@ -98,4 +98,4 @@ const AddProperty = () => {
   );
 };
 
-export default AddProperty;
+export default ManageProperty;

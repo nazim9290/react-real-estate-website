@@ -1,7 +1,11 @@
 .dashboard a {
   text-decoration: none;
-  font-size: 20px;
+  text-align: left;
+  font-size: 16px;
   font-weight: 700;
-  margin-top: 10px;
+  margin-bottom: 10px;
   display: block;
+}
+.dashboard {
+  border-right: 1px solid gray;
 }

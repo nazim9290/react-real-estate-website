@@ -44,19 +44,23 @@ const Reviews = () => {
               autoPlaySpeed={1000}
             >
               {review.map((item) => (
-                <div className="col-10">
+                <div key={item._id} className="col-10">
                   <div className="card">
                     <div className="card-block">
                       <div className="card-yazı">
                         <p className="text-center text-white">
-                          {item.title.slice(0, 200)}
+                          {item.reviews.slice(0, 200)}
                         </p>
                         <div className="card-sahip">
                           <div className="favicon">
                             <img
                               height="40"
                               width="40"
-                              src="https://i.hizliresim.com/yqQzON.jpg"
+                              src={
+                                item.img
+                                  ? item.img
+                                  : "https://i.hizliresim.com/yqQzON.jpg"
+                              }
                               alt=""
                             />
                           </div>
@@ -72,7 +76,7 @@ const Reviews = () => {
                       <div className="isim text-center">
                         <h1>{item.name}</h1>
                         <p>
-                          <i>{item.ocupation}</i>
+                          <i>{item.occupation}</i>
                         </p>
                       </div>
                     </div>

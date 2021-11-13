@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Row, Table } from "react-bootstrap";
+import { Row, Table, Button } from "react-bootstrap";
 
 const ManageOrders = () => {
   const [bookings, setBookings] = useState([]);
@@ -28,7 +28,7 @@ const ManageOrders = () => {
             </thead>
             <tbody>
               {bookings.map((item, index) => (
-                <tr>
+                <tr key={item._id}>
                   <td>{index + 1}</td>
                   <td>{item.email}</td>
                   <td>
@@ -36,7 +36,16 @@ const ManageOrders = () => {
                   </td>
                   <td>{item.service.title}</td>
                   <td>{item.service.price}</td>
-                  <td>{item?.status}</td>
+                  <td>
+                    <Button
+                      onClick={() => {}}
+                      variant={
+                        item.status === "pending" ? "primary" : "success"
+                      }
+                    >
+                      {item.status}
+                    </Button>
+                  </td>
                 </tr>
               ))}
             </tbody>
