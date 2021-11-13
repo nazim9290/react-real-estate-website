@@ -66,7 +66,7 @@ const ReviewPage = () => {
       reviews: userReviews.current.value,
     };
 
-    fetch("http://localhost:5000/review", {
+    fetch("https://gentle-hamlet-37789.herokuapp.com/review", {
       method: "POST",
       headers: {
         "content-type": "application/json",

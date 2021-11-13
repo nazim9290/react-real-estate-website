@@ -5,7 +5,7 @@ const ContactUs = () => {
   const [agent, setAgent] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/agent")
+    fetch("https://gentle-hamlet-37789.herokuapp.com/agent")
       .then((res) => res.json())
       .then((data) => setAgent(data));
   }, []);

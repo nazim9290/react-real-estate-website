@@ -39,7 +39,7 @@ const Properties = () => {
                       <img src={pt.img} alt="" />
                       <div className="info">
                         <h3>3 days ago</h3>
-                        <h3>for {pt.rentOrSell}</h3>
+                        <h3>for {pt.rentorsell}</h3>
                       </div>
                       <div className="icons">
                         <Link to="#" className="fas fa-camera" />

@@ -8,7 +8,7 @@ const MyOrder = () => {
   const [status, setStatus] = useState(false);
 
   useEffect(() => {
-    const url = `http://localhost:5000/bookings/user?email=${user.email}`;
+    const url = `https://gentle-hamlet-37789.herokuapp.com/bookings/user?email=${user.email}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setBookings(data));

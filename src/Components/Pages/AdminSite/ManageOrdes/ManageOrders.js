@@ -5,7 +5,7 @@ const ManageOrders = () => {
   const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
-    const url = "http://localhost:5000/bookings";
+    const url = "https://gentle-hamlet-37789.herokuapp.com/bookings";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setBookings(data));

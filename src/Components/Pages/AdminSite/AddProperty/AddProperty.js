@@ -7,7 +7,7 @@ const AddProperty = () => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
     axios
-      .post("http://localhost:5000/properties", data)
+      .post("https://gentle-hamlet-37789.herokuapp.com/properties", data)
       .then((response) => {
         console.log(response);
         if (response.data.insertedId) {
@@ -86,7 +86,7 @@ const AddProperty = () => {
               <input
                 type="text"
                 {...register("img", { required: true })}
-                placeholder="your image url"
+                placeholder="property image url"
               />
             </div>
 

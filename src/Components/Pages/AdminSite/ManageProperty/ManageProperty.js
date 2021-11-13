@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Row, Table, Button } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 
-const UpdateProperty = () => {
+const ManageProperty = () => {
   const [properties, setProperties] = useState([]);
+  const history = useHistory();
 
   useEffect(() => {
-    const url = "http://localhost:5000/properties";
+    const url = "https://gentle-hamlet-37789.herokuapp.com/properties";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProperties(data));
@@ -15,7 +17,7 @@ const UpdateProperty = () => {
   const deleteProperty = (id) => {
     let result = window.confirm("Are you sure you want to delete?");
     if (result) {
-      fetch(`http://localhost:5000/properties/${id}`, {
+      fetch(`https://gentle-hamlet-37789.herokuapp.com/properties/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -29,6 +31,9 @@ const UpdateProperty = () => {
           }
         });
     }
+  };
+  const handleUpdate = (id) => {
+    history.push(`/dashboard/update/${id}`);
   };
   return (
     <div>
@@ -58,7 +63,9 @@ const UpdateProperty = () => {
                   <td>{item.price}</td>
                   <td>
                     <Button
-                      onClick={() => {}}
+                      onClick={() => {
+                        handleUpdate(item._id);
+                      }}
                       variant="primary"
                       className="mx-3"
                     >
@@ -83,4 +90,4 @@ const UpdateProperty = () => {
   );
 };
 
-export default UpdateProperty;
+export default ManageProperty;

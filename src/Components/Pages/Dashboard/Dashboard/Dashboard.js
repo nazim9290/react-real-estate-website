@@ -19,7 +19,8 @@ import AdminRoute from "./../../../../AdminRoute/AdminRoute";
 import MakeAdmin from "../../AdminSite/MakeAdmin/MakeAdmin";
 import ManageOrders from "../../AdminSite/ManageOrdes/ManageOrders";
 import AddProperty from "../../AdminSite/AddProperty/AddProperty";
-import ManageProperty from "../../AdminSite/ManageProperty/ManageProperty";
+import ManageProperty from "./../../AdminSite/ManageProperty/ManageProperty";
+import UpdateProperty from "./../../AdminSite/ManageProperty/UpdateProperty";
 
 const Dashboard = () => {
   const { user, logout, admin } = useAuth();
@@ -47,7 +48,7 @@ const Dashboard = () => {
                   <Link to={`${url}`}>My Order</Link>
                   <Link to={`${url}/payment`}>Payment</Link>
                   <Link to={`${url}/review`}>Review</Link>
-                  <button className="btn btn-primary" onClick={logout}>
+                  <button className="btn btn-primary mx-auto" onClick={logout}>
                     Log Out
                   </button>
                 </div>
@@ -71,11 +72,14 @@ const Dashboard = () => {
                 <AdminRoute path={`${url}/manageOrders`}>
                   <ManageOrders />
                 </AdminRoute>
-                <AdminRoute exact path={`${url}/addProperty`}>
+                <AdminRoute path={`${url}/addProperty`}>
                   <AddProperty />
                 </AdminRoute>
-                <AdminRoute exact path={`${url}/manageProperty`}>
+                <AdminRoute path={`${url}/manageProperty`}>
                   <ManageProperty />
+                </AdminRoute>
+                <AdminRoute path={`${url}/update/:id`}>
+                  <UpdateProperty />
                 </AdminRoute>
               </Switch>
             </Col>
